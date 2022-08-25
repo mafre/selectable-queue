@@ -1,5 +1,7 @@
 import React, { FC, SVGProps } from "react";
 import { useRecoilState } from "recoil";
+import { styled } from "@mui/system";
+import { Typography } from "@mui/material";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -47,7 +49,7 @@ export const QueueItem: FC<IQueueItem> = ({
             }}
             disablePadding
             sx={{
-                border: isSelected ? "2px solid #1D5F83" : "0",
+                border: isSelected ? "2px solid #1D5F83" : "2px solid #fff",
                 borderRadius: "12px",
             }}
         >
@@ -78,7 +80,17 @@ export const QueueItem: FC<IQueueItem> = ({
                         }
                     </ListItemIcon>
                 )}
-                <ListItemText primary={title} secondary={description} />
+                <ListItemText
+                    primaryTypographyProps={{
+                        fontWeight: isSelected ? "bold" : "normal",
+                        color: "#444",
+                    }}
+                    secondaryTypographyProps={{
+                        color: "#666",
+                    }}
+                    primary={title}
+                    secondary={description}
+                />
             </ListItemButton>
         </ListItem>
     );
