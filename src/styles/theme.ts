@@ -12,11 +12,6 @@ const theme = createTheme({
             main: "#850c0c",
         },
     },
-    typography: {
-        h5: {
-            fontWeight: "bold",
-        },
-    },
 });
 
 export default theme;
